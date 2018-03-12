@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <body>
+        <script>
+            //1
+            
+            console.log(hello);
+            var hello = 'world';
+            //this would console log blank.
+            
+            //2
+            
+            var needle = 'haystack';
+            test();
+            
+            function test(){
+                var needle = 'magnet';
+                console.log(needle);
+            } //this would simply output magnet
+            
+            //3
+            
+            var brendan = 'super cool';
+            function print(){
+                brendan = 'only okay';
+                console.log(brendan);
+            }
+            console.log(brendan); //prints super cool, the print function is never invoked.
+            
+           // 4
+            
+            var food = 'chicken';
+            console.log(food);
+            eat();
+            function eat(){
+                food = 'half-chicken';
+                console.log(food);
+                var food = 'gone';
+            } //prints chicken, half-chicken
+            
+            //5
+            
+            mean();
+            console.log(food);
+            var mean = function() {
+                food = "chicken";
+                console.log(food);
+                var food = "fish";
+                console.log(food);
+            }
+            console.log(food);  //error, ,and then if the rest executed, chicken, chicken is food is a const.
+            
+            //6
+            
+            console.log(genre); //nothing
+            var genre = "disco"; //remember global variable
+            rewind();
+            function rewind() {
+                genre = "rock"; //assigns rock to global var.
+                console.log(genre); //prints rock
+                var genre = "r&b"; //declares new var, assign rb
+                console.log(genre); //print rb
+            }
+            console.log(genre); //rock, rb, disco
+            
+            //7
+            
+            dojo = "san jose";
+            console.log(dojo); //pring san jose
+            learn();
+            function learn() {
+                dojo = "seattle"; //change to sea
+                console.log(dojo); //print sea
+                var dojo = "burbank"; //new var burbank
+                console.log(dojo); //print burbank
+            }
+            console.log(dojo); //print seattle
+            //sj, sea, bb, sea
+        </script>   
+    </body>
+</html>
+
